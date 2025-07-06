@@ -1,0 +1,26 @@
+[package]
+name = "driveshaft-bench"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.6.0", features = [
+    "async",
+    "async_futures",
+    "async_tokio",
+] }
+rand = "0.9.1"
+sha2 = "0.10.9"
+tokio = { version = "1.46.0", features = ["full"] }
+driveshaft = "0.2.0"
+rocksdb = "0.23.0"
+
+[[bench]]
+name = "blocking_cpu"
+harness = false
+
+[[bench]]
+name = "blocking_io"
+harness = false
